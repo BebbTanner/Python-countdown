@@ -10,5 +10,10 @@
     Will this timer countdown in minutes and seconds or just seconds?
 """
 
-stringMinutes = input("Please set a time to countdown(In minutes): ")
-print(stringMinutes)
+import time
+
+#This is a variable that will store the current local time.
+currentTime = time.ctime()
+#This is just a print statement to confirm that it functioned correctly.
+print(currentTime)
+
