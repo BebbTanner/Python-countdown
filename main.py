@@ -12,8 +12,24 @@
 
 import time
 
-#This is a variable that will store the current local time.
-currentTime = time.ctime()
-#This is just a print statement to confirm that it functioned correctly.
-print(currentTime)
+#I borrowed this from an example. I am working on figuring out how it works.
+def countdown(t):
 
+    while t:
+        #divmod is just dividing divmod(dividend, divisor)
+        mins, secs = divmod(t, 60)
+        #I am not sure what the {:02d} is. It is more than likely the formating for the time.
+        timer = '{:02d}:{:02d}'.format(mins, secs)
+        #This is printing the current time left, and overwriting the line each time to display the current time left.
+        print(timer, end='\r')
+        #I need to look more into the sleep function.
+        time.sleep(1)
+        #This is subtracting 1 from the t variable to eventually get to 0.
+        t -= 1
+
+    print("Time is up.")
+
+
+t = input("Enter the time in seconds: ")
+
+countdown(int(t))
